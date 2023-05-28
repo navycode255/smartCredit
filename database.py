@@ -4,12 +4,15 @@ def create_connection():
     # Connection details
     host = 'localhost'
     dbname = 'credit_risk'
-    user = 'navy'
+    user = 'postgres'
     password = 'navycode255'
 
     # Connect to PostgreSQL
     conn = psycopg2.connect(host=host, dbname=dbname, user=user, password=password)
     return conn
+
+def close_connection(conn):
+    conn.close()
 
 # Query for inserting data from the database tables
 def execute_query(conn, query):
